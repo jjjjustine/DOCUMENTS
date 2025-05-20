@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Room Reservation System</title>
+  <link rel="stylesheet" href="add-room.css" />
+
+  <!-- Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <img src="assets/nbsclogo.png" alt="NBSC Logo" class="logo" />
+          <span class="title">NBSC ROOM RESERVATION</span>
+        </div>
+        <div class="user-dropdown-container">
+          <button class="user-icon-btn" onclick="toggleDropdown()">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-caret-down"></i>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html">Room Lists</a>
+            <a href="#">Log Out</a>
+          </div>
+        </div>
+      </header>
+
+  <main class="container">
+    <h2>Room Reservation System</h2>
+
+    <div class="form-box">
+      <div class="add-icon"><strong>➕ Add New Room</strong></div>
+
+      <form id="addRoomForm">
+        <label for="building">Building Name</label>
+        <input type="text" id="building" name="building" required />
+
+        <label for="room">Room Number</label>
+        <input type="number" id="room" name="room" required />
+
+        <label for="date">Date Available</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="time">Time Available</label>
+        <input type="time" id="time" name="time" required />
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

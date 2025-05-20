@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NBSC Room Reservation</title>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="assets/nbsclogo.png" alt="NBSC Logo" class="logo" />
+      <span class="title">NBSC ROOM RESERVATION</span>
+    </div>
+    <div class="user-dropdown-container">
+      <button class="user-icon-btn" onclick="toggleDropdown()">
+        <i class="fas fa-user"></i>
+        <i class="fas fa-caret-down"></i>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="add-room.html">Add Room</a>
+        <a href="#">Log Out</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2>Existing Room Lists</h2>
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="searchInput" placeholder="Search..." />
+    </div>
+
+    <table id="roomTable">
+      <thead>
+        <tr>
+          <th>Building</th>
+          <th>Room Number</th>
+          <th>Date Available</th>
+          <th>Time Available</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="roomTableBody">
+        <!-- Rows inserted here by JS -->
+      </tbody>
+    </table>
+  </main>
+  <div id="updateModal" style="display:none; position:fixed; background:#fff; padding:20px; border:1px solid #000; top:50%; left:50%; transform: translate(-50%, -50%);">
+    <h2>Update Room</h2>
+    <form id="updateForm">
+      <label>
+        Building:
+        <input type="text" id="updateBuilding" required />
+      </label><br /><br />
+      <label>
+        Room:
+        <input type="text" id="updateRoom" required />
+      </label><br /><br />
+      <label>
+        Date:
+        <input type="date" id="updateDate" required />
+      </label><br /><br />
+      <label>
+        Time:
+        <input type="time" id="updateTime" required />
+      </label><br /><br />
+      <button type="submit">Save</button>
+      <button type="button" onclick="closeModal()">Cancel</button>
+    </form>
+  </div>
+
+<!-- Optional overlay -->
+<div id="modalOverlay" style="display:none; position: fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(0,0,0,0.5); z-index: 900;" onclick="closeModal()"></div>
+
+
+  <!-- Link to external JS -->
+  <script src="script.js"></script>
+</body>
+</html>
